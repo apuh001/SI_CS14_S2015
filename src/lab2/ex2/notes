@@ -1,0 +1,6 @@
+Note the vec.begin() and vec.end() calls in the above code block. 
+Both of these return an iterator to different positions in the vector container. 
+Both also return an iterator of type vector<int>::iterator.
+
+vec.begin() returns an iterator to beginning of vec. 
+However, vec.end() returns an iterator to the element one past the last element.
