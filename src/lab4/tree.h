@@ -3,7 +3,9 @@
  
 #include <iostream>
 #include <queue>
- 
+
+using namespace std;
+
 template<typename T>
 class Tree {
     private:
@@ -51,6 +53,38 @@ class Tree {
             for(; curr->right != 0; curr = curr->right);
             return curr;
         }
+        
+        Node* find(T val)
+        {
+            //If root is null
+            if(root == 0)
+                return 0;
+            
+            Node* curr = root;
+            while (curr != 0)
+            {
+                if(val < curr->data)
+                {
+                    if(curr->left != 0)
+                        curr = curr->left; 
+                    else return 0;
+                }    
+                else if(val > curr->data)
+                {
+                    if(curr->right != 0)
+                        curr = curr->right;
+                    else return 0;
+                }
+                else if(val == curr->data)
+                    return curr;
+            }
+            
+            cout << "blah" << endl;
+            
+            //Return null pointer
+            return 0;
+        }
+        
         
         //END OF MY WORK
         Node* get_root() { return root; }
