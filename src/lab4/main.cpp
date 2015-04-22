@@ -20,7 +20,11 @@ int main() {
     
     cout << endl;
     cout << "min: " << test.min()->data << endl;
-    cout << "max: " << test.max()->data << endl;
+    cout << "max: " << test.max()->data << endl << endl;
+    
+    cout << "Finding 20: " << test.find(20)->data << endl;
+    cout << "Finding 7: " << test.find(7)->data << endl;
+    cout << "Finding 9: " << test.find(9)->data << endl;
     
     return 0;
 }
