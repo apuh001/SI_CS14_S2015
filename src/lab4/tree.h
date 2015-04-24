@@ -27,6 +27,19 @@ class Tree {
             
             return n;
         }
+        
+        //Helper for total
+        T getSum(Node* n)
+        {
+            //Base case: If n is 0 return default value
+            if(n == 0)
+                return T();
+            if(n->left == 0 && n->right == 0)
+                return n->data;
+        
+            return getSum(n->left) + getSum(n->right);
+        }
+        
     
     public:
         Tree():root(0) { }
@@ -83,6 +96,14 @@ class Tree {
             
             //Return null pointer
             return 0;
+        }
+        
+        
+        T total()
+        {
+            if(root == 0)
+                return T();
+            return root->data + getSum(root->left) + getSum(root->right);
         }
         
         
