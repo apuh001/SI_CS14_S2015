@@ -37,13 +37,36 @@ class Tree {
             if(n->left == 0 && n->right == 0)
                 return n->data;
         
-            return getSum(n->left) + getSum(n->right);
+            return n->data + getSum(n->left) + getSum(n->right);
         }
         
+        void burnTree(Node* n)
+        {
+            if(n == 0)
+                return;
+            if(n->left == 0 && n->right == 0)
+            {
+                cout << "Deleting " << n->data << endl;
+                delete n;
+                return;
+            }
+            
+            burnTree(n->left);
+            burnTree(n->right);
+            cout << "Deleting " << n->data << endl;
+            delete n;
+        }
     
     public:
         Tree():root(0) { }
-    
+        
+        ~Tree()
+        {
+            if(root == 0)
+                return;
+            burnTree(root);
+        }
+        
         //MY WORK
         Node* min()
         {
@@ -106,6 +129,16 @@ class Tree {
             return root->data + getSum(root->left) + getSum(root->right);
         }
         
+        /*
+        int print_ascending()
+        {
+            
+        }
+        
+        int print_descending(){
+            
+        }
+        */
         
         //END OF MY WORK
         Node* get_root() { return root; }
