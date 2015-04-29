@@ -3,6 +3,7 @@
 //typedef std::map<std::string,std::vector<char>>::iterator Name
 //Then all you have have to do is type Name it, since Name is kind of like a 
 //place holder.
+//In objective C or bash or other languages, Dictionary is the term for Maps
 #include <map>
 #include <vector>
 #include <fstream>
@@ -58,8 +59,19 @@ std::map<std::string, unsigned int> freq_map(std::vector<std::string> words)
 std::vector<std::string> 
 top_n(std::map<std::string, unsigned int> freq_map, unsigned int n = 5)
 {
-    for(unsigned i = 0; i < freq_map.size(); i++)
+    string mostFreq;
+    int numberOf;
+    vector<string> topN;
+    
+    for(unsigned i = 0; i < n; i++)
     {
-        
+        for(auto it = freq_map.begin(); it != freq_map.end(); it++)
+        {
+            if(it->mapped_type > numberOf && )
+            {
+                numberOf = it->mapped_type;
+                mostFreq = it->key_type;
+            }
+        }
     }
 }
